@@ -21,7 +21,7 @@ public class UserService {
     @Transactional
     public ResponseEntity save(SignUpUserRequest request) {
         User savedUser = userRepository.save(User.builder()
-                //.email(request.getEmail())
+                .email(request.getEmail())
                 .password(request.getPassword())
                 .build());
         surveySave(request, savedUser);

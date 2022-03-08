@@ -7,6 +7,6 @@ import lombok.Getter;
 @Getter
 @Builder
 @AllArgsConstructor
-public class VerifyResponse {
-    private Boolean isValid;
+public class CodeResponse {
+    private String code;
 }

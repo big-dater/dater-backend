@@ -25,7 +25,7 @@ public class SignUpUserRequest {
     @NotNull(message = "안밖을 선택해주세요.")
     private Boolean isInsider;
 
-    @NotEmpty(message = "이메일을 입력해주세요.")
+    @NotEmpty(message = "자유시간을 입력해주세요.")
     private String freeTime;
 
     @NotEmpty(message = "동반자를 입력해주세요.")

@@ -18,7 +18,7 @@ public class Survey {
     @Column(name = "survey_id")
     private Long id;
 
-    @Column(name = "nickname")
+    @Column(name = "nickname", unique = true)
     private String nickname;
 
     @Column(name = "sex")
@@ -38,7 +38,4 @@ public class Survey {
 
     @Column(name = "age")
     private String age;
-
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "survey")
-    private User user;
 }

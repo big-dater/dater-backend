@@ -1,8 +1,10 @@
 package bigdater.dater.controller;
 
+import bigdater.dater.dto.request.SignUpUserRequest;
 import bigdater.dater.dto.request.VerifyRequest;
 import bigdater.dater.dto.response.CodeResponse;
 import bigdater.dater.dto.response.VerifyResponse;
+import bigdater.dater.entity.user.survey.Survey;
 import bigdater.dater.service.EmailService;
 import bigdater.dater.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -29,5 +31,10 @@ public class AuthController {
     @PostMapping("/verify")
     public VerifyResponse verifyCode(@Valid @RequestBody VerifyRequest request) {
         return emailService.verifyCode(request.getVerifyCode(), request.getUserCode());
+    }
+
+    @PostMapping("/signup")
+    public ResponseEntity<?> signup(@Valid @RequestBody SignUpUserRequest request) {
+        return userService.signup(request);
     }
 }
